@@ -5,19 +5,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ADS - Contatos</title>
+    <title>ADS - Trabalhos</title>
     <link rel="shortcut icon" href="img/images.jpeg" >
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
     <link href="fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
     <link href="css/templatemo-diagoona.css" rel="stylesheet" />
-<!--
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!--
+
 
 TemplateMo 550 Diagoona
 
 https://templatemo.com/tm-550-diagoona
 
 -->
+
+<style>
+    .modal-confirm {		
+        color: #636363;
+        width: 325px;
+        font-size: 14px;
+    }
+    .modal-confirm .modal-content {
+        padding: 20px;
+        border-radius: 5px;
+        border: none;
+    }
+    .modal-confirm .modal-header {
+        border-bottom: none;   
+        position: relative;
+    }
+    .modal-confirm h4 {
+        text-align: center;
+        font-size: 26px;
+        margin: 30px 0 -15px;
+    }
+    .modal-confirm .form-control, .modal-confirm .btn {
+        min-height: 40px;
+        border-radius: 3px; 
+    }
+    .modal-confirm .close {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+    }	
+    .modal-confirm .modal-footer {
+        border: none;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 13px;
+    }	
+    .modal-confirm .icon-box {
+        color: #fff;		
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: -70px;
+        width: 95px;
+        height: 95px;
+        border-radius: 50%;
+        z-index: 9;
+        background: #82ce34;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+    .modal-confirm .icon-box i {
+        font-size: 58px;
+        position: relative;
+        top: 3px;
+    }
+    .modal-confirm.modal-dialog {
+        margin-top: 80px;
+    }
+    .modal-confirm .btn {
+        color: #fff;
+        border-radius: 4px;
+        background: #82ce34;
+        text-decoration: none;
+        transition: all 0.4s;
+        line-height: normal;
+        border: none;
+    }
+    .modal-confirm .btn:hover, .modal-confirm .btn:focus {
+        background: #6fb32b;
+        outline: none;
+    }
+    .trigger-btn {
+        display: inline-block;
+        margin: 100px auto;
+    }
+    </style>
+
+    </style>
 </head>
 <body>
     <div class="tm-container">
@@ -64,9 +151,10 @@ https://templatemo.com/tm-550-diagoona
                 <main class="tm-col-right tm-contact-main"> <!-- Content -->
                     <section class="tm-content tm-contact">
                         <h2 class="mb-4 tm-content-title">Enviar Dados</h2>
+                       <hr>
                         <p class="mb-85">Envie seu Comentário/Relatório, Para suporte ou Futuras mudanças em nosso Sistemas,
                             Sua Avaliação é Essencial para nosso Crescimento, Grato.</p>
-                        <form id="contact-form" action="js/app.js" method="POST">
+                        <form id="contact-form" action="" method="POST">
                             <div class="form-group mb-4">
                                 <input type="text" name="name" class="form-control" placeholder="Nome" required="" />
                             </div>
@@ -77,17 +165,31 @@ https://templatemo.com/tm-550-diagoona
                                 <textarea rows="6" name="message" class="form-control" placeholder="Menssagem..." required=""></textarea>
                             </div>
                             <div class="text-right">
-                                <button type="submit" value="submit" class="btn btn-big btn-primary">Enviar</button>
-                                <div id="dialog" title="Basic dialog" style="display:none;">
-                                    <p>Enviado com Sucesso.</p>
-                                  </div>
+                                <a href="#myModal" type="submit" value="submit" class="trigger-btn" data-toggle="modal">Enviar</a>
                             </div>
                         </form>
                     </section>
                 </main>
             </div>
         </div>        
-
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog modal-confirm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="icon-box">
+                            <i class="material-icons">&#xE876;</i>
+                        </div>				
+                        <h4 class="modal-title w-100">Sucesso!</h4>	
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center">Sua Mensagem foi confirmada. Verifique seu e-mail para detalhes.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success  btn-block="data-dismiss="modal" onclick="window.location.href = 'index.html'">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
         <div class="tm-row">
             <div class="tm-col-left text-center">            
                 <ul class="tm-bg-controls-wrapper">
@@ -100,11 +202,11 @@ https://templatemo.com/tm-550-diagoona
                 <footer class="tm-site-footer text-right">
                     <p class="mb-0">@Copyright 2021 Kawe Maximo.
 
-                        | <a rel="nofollow" target="_parent" href="https://www.brazcubas.edu.br/"" class="
-                            tm-text-link">Faculdade BrazCubas</a></p>
+                        | <a rel="nofollow" target="_parent" href="https://www.brazcubas.edu.br/" class="tm-text-link">Faculdade BrazCubas</a></p>
                 </footer>
             </div>  
         </div>
+
 
         <div class="tm-bg"> <!-- Diagonal background design -->
             <div class="tm-bg-left"></div>
