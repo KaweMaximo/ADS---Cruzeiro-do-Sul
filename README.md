@@ -1,1 +1,0 @@
-# ADS---Cruzeiro-do-Sul
